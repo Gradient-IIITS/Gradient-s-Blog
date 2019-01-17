@@ -1,0 +1,4 @@
+baseURL = "http://gradient-iiits.github.io/"
+languageCode = "en-us"
+title = "Gradient IIITS"
+theme = "ananke"
