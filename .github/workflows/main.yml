@@ -19,7 +19,7 @@ jobs:
           path: .
           submodules: recursive
       - name: Build and Push
-        uses: gradientiiits/hugo-remote/*
+        uses: gradientiiits/hugo-remote/.
         env:
           TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           DEST: public_dir
