@@ -3,7 +3,6 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
 toc: true
-author: "Anubhav Ujjawal"
+author: "Gradient"
 tags: []
 ---
-
