@@ -10,19 +10,19 @@ tags: ["competitive-programming", "algorithms"]
 
 # Square Root Decomposition
 
-Square Root Decomposition is an algorithm for answering range queries, in $\mathcal{O}(Q\sqrt{N})$, where $Q$ is number of queries and $N$ is number of elements in the range. It is very useful in a lot of CP questions. The basic technique of Square Root Decomposition can be used for doing certain queries on Trees as well.
+Square Root Decomposition is an algorithm for answering range queries, in $\mathcal{O}(Q\sqrt{N})$, where $Q$ is the number of queries and $N$ is the number of elements in the range. It is very useful in a lot of CP questions. The basic technique of Square Root Decomposition can be used for doing certain queries on Trees as well.
 
 ## Motivation
 
-Lets look at a problem, to motivate the need for this algorithm. Suppose we are given an array of $N$ integers.
+Let us look at a problem, to motivate the need for this algorithm. Suppose we are given an array of $N$ integers.
 $$a_{1}, a_{2}, a_{3} ...$$
-and $Q$ queries. For each query, we are given to indexes $L$ and $R$. We need to give the maximum integer, in the range $a_{L}, a_{L+1}, ..., a_{R-1}, a_{R}$. Now this is easily solvable using [prefix-sums](https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/) in $\mathcal{O}(1)$ time complexity and $\mathcal{O}(N)$ extra space complexity. But suppose along with this we are given queries of second type, an index $i$ and a integer $A$. In queries of second type, we need to update value of $a_{i}$ to $A$.
+and $Q$ queries. For each query, we are given to indexes $L$ and $R$. We need to give the maximum integer, in the range $a_{L}, a_{L+1}, ..., a_{R-1}, a_{R}$. Now this is easily solvable using [prefix-sums](https://www.geeksforgeeks.org/prefix-sum-array-implementation-applications-competitive-programming/) in $\mathcal{O}(1)$ time complexity and $\mathcal{O}(N)$ extra space complexity. But suppose along with this we are given queries of the second type, an index $i$ and an integer $A$. In queries of the second type, we need to update the value of $a_{i}$ to $A$.
 
-This new problem is certainly more difficult than the first version. If we use prefix-sums method, then update queries will take $\mathcal{O}(N)$ while, we can still answer queries of the first type (range query) in $\mathcal{O}(1)$. If we don't use prefix-sums then we can do update operations in $\mathcal{O}(1)$ but then we will need $\mathcal{O}(N)$ operations for answering range queries.
+This new problem is certainly more difficult than the first version. If we use the prefix-sums method, then update queries will take $\mathcal{O}(N)$ while, we can still answer queries of the first type (range query) in $\mathcal{O}(1)$. If we don't use prefix-sums then we can do update operations in $\mathcal{O}(1)$ but then we will need $\mathcal{O}(N)$ operations for answering range queries.
 
 ## Method
 
-Square Root Decomposition allows us to efficiently answer both the queries (in $\mathcal{O}(\sqrt{N})$). The basic idea is to divide $N$ integers into $\sqrt{N}$ blocks each containing $\sqrt{N}$ elements (maybe except for the last block). And for each block we pre-compute the range queries.
+Square Root Decomposition allows us to efficiently answer both the queries (in $\mathcal{O}(\sqrt{N})$). The basic idea is to divide $N$ integers into $\sqrt{N}$ blocks each containing $\sqrt{N}$ elements (maybe except for the last block). And for each block, we pre-compute the range queries.
 
 For example,
 
@@ -42,7 +42,7 @@ Now, let us use the information given above to calculate, range query for $L=2$ 
 
 $max([3, 4, 5, 6, 3]) = max(max([3, 4]), max([5, 6, 3]))$
 
-Now, we already know the value of second subexpression, and we can calculate value of first subexpression in $\mathcal{O}(\sqrt{N})$ (in worst case). So, we have solved the query in $\mathcal{O}(\sqrt{N})$.
+Now, we already know the value of the second subexpression, and we can calculate the value of the first subexpression in $\mathcal{O}(\sqrt{N})$ (in the worst case). So, we have solved the query in $\mathcal{O}(\sqrt{N})$.
 
 Now, these example can be generalized as follows, suppose taht blocks are as follows:
 
@@ -52,7 +52,7 @@ Now, suppose that $L$ lies in block ($X_{i} ... Y_{i}$) and $R$ lies in block ($
 
 Then we need to calculate, maximum between $(a_{L} ... a_{Y_{i}})$ and maximum between $(a_{L} ... a_{Y_{i}})$ each of which will take $\mathcal{O}(\sqrt{N})$ time. And in worst case we have $\sqrt{N}$ blocks in between. Therefore, combining the solution will take $\mathcal{O}(\sqrt{N})$ time. Overall we do, $\mathcal{O}(\sqrt{N})$ operations 3 times which is still $\mathcal{O}(\sqrt{N})$.
 
-Therefore, now we have proved that using square root decomposition we can perform range queries in $\mathcal{O}(\sqrt{N})$. Now, for update queries, we need to update value of element and also the value of the block in which the number lies. (clearly, this can be done in $\mathcal{O}(\sqrt{N})$).
+Therefore, now we have proved that using square root decomposition we can perform range queries in $\mathcal{O}(\sqrt{N})$. Now, for update queries, we need to update the value of the element and also the value of the block in which the number lies. (clearly, this can be done in $\mathcal{O}(\sqrt{N})$).
 
 ## Conclusion
 
