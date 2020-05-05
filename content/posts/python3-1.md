@@ -3,6 +3,7 @@ title: "Through Python3 (Day 1)"
 date: 2019-02-15T00:18:00+05:30
 draft: false
 toc: true
+mathjax: false
 author: Krishna Kumar Dey
 tags: [ "python", "beginner"]
 ---

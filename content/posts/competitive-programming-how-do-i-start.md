@@ -3,6 +3,7 @@ title: "Competitive Programming - How do I Start ?"
 date: 2019-01-20T00:18:16+05:30
 draft: false
 toc: true
+mathjax: false
 author: Arshad G.
 tags: [ "competitive-programming", "beginner"]
 ---
