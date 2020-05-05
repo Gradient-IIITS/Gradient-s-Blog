@@ -21,6 +21,7 @@ jobs:
       - name: Build and Push
         uses: gradientiiits/hugo-remote@master
         env:
+          USER: gradientiiits
           TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
           DEST: public_dir
           REMOTE: Gradient-IIITS/gradient-iiits.github.io.git
