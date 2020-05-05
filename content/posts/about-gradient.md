@@ -3,6 +3,7 @@ title: "About Gradient"
 date: 2019-01-18T00:03:58+05:30
 draft: false
 toc: true
+mathjax: false
 ---
 
 Indian Institute of Information Technology, Sri City, Chittoor known as IIIT, Sri City is an institute of national importance, setting best-in-class technology education standards in India. IIITS was established in 2013 under the Government of India’s Initiative to set up 20 Institutes across India, focusing on Information Technology. The Institute was setup by the Government of India – MHRD, Government of Andhra Pradesh and Industry Partners represented by Sri City Foundation as a Not-for-Profit Public-Private-Partnership. The Institute was funded 50 percent by the Government of India, 35 percent by the Government of Andhra Pradesh and 15 percent by the Industry Partners.
