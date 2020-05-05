@@ -1,4 +1,7 @@
 # Gradient's Blog Code.
+
+![Hugo Build](https://github.com/Gradient-IIITS/Gradient-s-Blog/workflows/Hugo%20Build/badge.svg)
+
 The blog has been created using [Hugo](https://gohugo.io/), a static site generator.
 
 ## To Contribute:
