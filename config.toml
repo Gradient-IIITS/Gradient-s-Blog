@@ -2,4 +2,6 @@ baseURL = "http://gradient-iiits.github.io/"
 languageCode = "en-us"
 title = "Gradient IIITS"
 theme = "ananke"
-recent_posts_number = 4
+
+[params]
+    recent_posts_number = 4
