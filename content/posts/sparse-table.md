@@ -118,7 +118,7 @@ for(int i = N - 1; i >= 0; i--) {
 
 `pos` denotes the position from where we need to process queries and `size` denotes the number of elements left for processing. So, `pos` starts from $L$ and `size` starts from $(R - L + 1)$.
 
-We basically start from biggest power of $2$ and whenever, we get to a value 2^{i} such that it is less than or equal to current `size`, we process range $[pos, pos + 2^{i} - 1]$, now because elements upto $pos + 2^{i} - 1$ is processed, we set $pos = pos + 2^{i}$ and also since total $2^{i}$ elements are processed, we now decrease size by the $2^{i}$.
+We basically start from biggest power of $2$ and whenever, we get to a value $2^{i}$ such that it is less than or equal to current `size`, we process range $[pos, pos + 2^{i} - 1]$, now because elements upto $pos + 2^{i} - 1$ is processed, we set $pos = pos + 2^{i}$ and also since total $2^{i}$ elements are processed, we now decrease size by the $2^{i}$.
 
 Now notice that the new value of size will be less than $2^{i}$ (Thinks in terms of binary representation). So, it is guaranteed that size will eventually reach $0$.
 
@@ -128,9 +128,9 @@ Now, suppose that we need to find the minimum of numbers in the range. Preproces
 
 Suppose we need to answer query for $[L, R]$ and $size = R - L + 1$. Find the largest power of $2$, less than equal to the size. Let this be $2^{j}$. Now if we find minimum between range $[L, L + 2^{j} - 1]$ and $[R - 2^{j} + 1, R]$, we will be done.
 
-Why? because these two ranges cover all the elements between $[L, R]$. As, both the ranges, lie between $L$ and between $R$. ($L + 2^{j} - 1$ <= R$ and $R - 2^{j} + 1$ >= L$). Also, since the total number of elements combining both the ranges is greater than `size` (Again, think in terms of binary). So, it is guaranteed that all the elements are covered.
+Why? because these two ranges cover all the elements between $[L, R]$. As, both the ranges, lie between $L$ and between $R$. ($L + 2^{j} - 1 <= R$ and $R - 2^{j} + 1 >= L$). Also, since the total number of elements combining both the ranges is greater than `size` (Again, think in terms of binary). So, it is guaranteed that all the elements are covered.
 
-Now, if we need to calculate 2^{j} value for each query then it will again reduce to $\mathcal{O}(\log{n})$. So, instead, we precalculate these values as well. This can be done in $\mathcal{O}(n)$. Therefore, our overall complexity for precalculation remains the same. The complete implementation can be found [here](/code/sparse-table/code2.cpp).
+Now, if we need to calculate $2^{j}$ value for each query then it will again reduce to $\mathcal{O}(\log{n})$. So, instead, we precalculate these values as well. This can be done in $\mathcal{O}(n)$. Therefore, our overall complexity for precalculation remains the same. The complete implementation can be found [here](/code/sparse-table/code2.cpp).
 
 ## References
 
