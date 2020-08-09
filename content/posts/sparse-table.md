@@ -75,7 +75,7 @@ int N = log(n) + 1;
 int queries[n][N];
 
 for(int i = 0; i < n; i++) {
-    queries[i] = a[i];
+    queries[i][0] = a[i];
 }
 
 for(int i = 1; i < N; i++) {
